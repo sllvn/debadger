@@ -27,9 +27,14 @@ const handleLinkedIn = () => {
   removeTitleNotificationCount();
 }
 
+const handleFacebook = () => {
+  document.querySelector('#notificationsCountValue').style.display = 'none'
+  removeTitleNotificationCount();
+}
+
 setTimeout(() => {
   try {
-    console.log('firing');
+    console.log('Debadger: removing badges...');
 
     if (window.location.href.includes('twitter')) {
       handleTwitter();
@@ -37,8 +42,9 @@ setTimeout(() => {
       handleYoutube();
     } else if (window.location.href.includes('linkedin')) {
       handleLinkedIn();
+    } else if (window.location.href.includes('facebook')) {
+      handleFacebook();
     }
-
   } catch (err) {
     console.error('unable to remove twitter badges, page not ready?');
     console.error(err);
