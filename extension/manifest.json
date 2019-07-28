@@ -1,0 +1,23 @@
+{
+
+  "description": "Debadger: blocks badges and 'unread' counts on social media sites",
+  "manifest_version": 2,
+  "name": "Debadger",
+  "version": "0.0.1",
+  "content_scripts": [
+    {
+      "js": ["debadger.js"],
+      "matches": [
+        "https://linkedin.com/*",
+        "https://www.linkedin.com/*",
+        "https://twitter.com/*",
+        "https://www.twitter.com/*",
+        "https://youtube.com/*",
+        "https://www.youtube.com/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "tabs", "http://*/*"
+  ]
+}
