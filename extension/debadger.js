@@ -23,7 +23,10 @@ const handleYoutube = () => {
 }
 
 const handleLinkedIn = () => {
-  document.querySelector('.nav-item__badge').style.display = 'none'
+  const badges = document.querySelectorAll('.nav-item__badge')
+  Array.prototype.forEach.call(badges, (el) => {
+    el.style.display = 'none'
+  })
   removeTitleNotificationCount();
 }
 
