@@ -28,6 +28,19 @@ const handleLinkedIn = () => {
     el.style.display = 'none'
   })
   removeTitleNotificationCount();
+
+  // fix favicon
+  const favicon = document.querySelector('link[rel="shortcut icon"]')
+  const neutralIconUrl = 'https://static-exp1.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico'
+  favicon.href = neutralIconUrl
+  new MutationObserver(function(mutations) {
+    if (favicon.href !== neutralIconUrl) {
+      favicon.href = neutralIconUrl
+    }
+  }).observe(
+    document.querySelector('link[rel="shortcut icon"]'),
+    { characterData: true, attributes: true, childList: true, subtree: true }
+  );
 }
 
 const handleFacebook = () => {
